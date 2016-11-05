@@ -926,12 +926,12 @@ public class Build extends BuildBase {
                 File.pathSeparator + javaToolsJar;
         if (fast) {
             execJava(args(
-                    "-Xmx128m",
+                    "-Xmx1g",
                     "-cp", cp,
                     "org.h2.test.TestAll", "fast"));
         } else {
             execJava(args(
-                    "-Xmx128m",
+                    "-Xmx1g",
                     "-cp", cp,
                     "org.h2.test.TestAll"));
         }

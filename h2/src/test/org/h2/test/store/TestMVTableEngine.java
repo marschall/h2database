@@ -89,6 +89,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testLobCopy() throws Exception {
+        println("testLobCopy");
         deleteDb(getTestName());
         Connection conn = getConnection(getTestName());
         Statement stat = conn.createStatement();
@@ -110,6 +111,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testLobReuse() throws Exception {
+        println("testLobReuse");
         deleteDb(getTestName());
         Connection conn = getConnection(getTestName());
         Statement stat = conn.createStatement();
@@ -134,6 +136,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testShutdownDuringLobCreation() throws Exception {
+        println("testShutdownDuringLobCreation");
         deleteDb(getTestName());
         Connection conn = getConnection(getTestName());
         Statement stat = conn.createStatement();
@@ -201,6 +204,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testLobCreationThenShutdown() throws Exception {
+        println("testLobCreationThenShutdown");
         deleteDb(getTestName());
         Connection conn = getConnection(getTestName());
         Statement stat = conn.createStatement();
@@ -242,6 +246,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testManyTransactions() throws Exception {
+        println("testManyTransactions");
         deleteDb(getTestName());
         Connection conn = getConnection(getTestName());
         Statement stat = conn.createStatement();
@@ -259,6 +264,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testAppendOnly() throws Exception {
+        println("testAppendOnly");
         deleteDb(getTestName());
         Connection conn = getConnection(getTestName());
         Statement stat = conn.createStatement();
@@ -300,6 +306,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testLowRetentionTime() throws SQLException {
+        println("testLowRetentionTime");
         deleteDb(getTestName());
         Connection conn = getConnection(
                 getTestName() + ";RETENTION_TIME=10;WRITE_DELAY=10");
@@ -329,6 +336,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testOldAndNew() throws SQLException {
+        println("testOldAndNew");
         Connection conn;
         deleteDb(getTestName());
         String urlOld = getURL(getTestName() + ";MV_STORE=FALSE", true);
@@ -356,6 +364,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testTemporaryTables() throws SQLException {
+        println("testTemporaryTables");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -384,6 +393,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testUniqueIndex() throws SQLException {
+        println("testUniqueIndex");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -400,6 +410,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testSecondaryIndex() throws SQLException {
+        println("testSecondaryIndex");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -422,6 +433,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testGarbageCollectionForLOB() throws SQLException {
+        println("testGarbageCollectionForLOB");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -458,6 +470,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testSpatial() throws SQLException {
+        println("testSpatial");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -477,6 +490,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testCount() throws Exception {
+        println("testCount");
         if (config.memory) {
             return;
         }
@@ -538,6 +552,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testMinMaxWithNull() throws Exception {
+        println("testMinMaxWithNull");
         Connection conn;
         Connection conn2;
         Statement stat;
@@ -568,6 +583,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testTimeout() throws Exception {
+        println("testTimeout");
         Connection conn;
         Connection conn2;
         Statement stat;
@@ -590,6 +606,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testExplainAnalyze() throws Exception {
+        println("testExplainAnalyze");
         if (config.memory) {
             return;
         }
@@ -618,6 +635,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testTransactionLogUsuallyNotStored() throws Exception {
+        println("testTransactionLogUsuallyNotStored");
         Connection conn;
         Statement stat;
         // we expect the transaction log is empty in at least some of the cases
@@ -656,6 +674,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testShrinkDatabaseFile() throws Exception {
+        println("testShrinkDatabaseFile");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE";
         Connection conn;
@@ -719,6 +738,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testTwoPhaseCommit() throws Exception {
+        println("testTwoPhaseCommit");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -746,6 +766,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testRecover() throws Exception {
+        println("testRecover");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -776,6 +797,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testRollback() throws Exception {
+        println("testRollback");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -791,6 +813,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testSeparateKey() throws Exception {
+        println("testSeparateKey");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -816,6 +839,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testRollbackAfterCrash() throws Exception {
+        println("testRollbackAfterCrash");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -875,6 +899,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testReferentialIntegrity() throws Exception {
+        println("testReferentialIntegrity");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -947,6 +972,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testWriteDelay() throws Exception {
+        println("testWriteDelay");
         Connection conn;
         Statement stat;
         ResultSet rs;
@@ -970,6 +996,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testAutoCommit() throws SQLException {
+        println("testAutoCommit");
         Connection conn;
         Statement stat;
         ResultSet rs;
@@ -1004,6 +1031,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testReopen() throws SQLException {
+        println("testReopen");
         Connection conn;
         Statement stat;
         deleteDb(getTestName());
@@ -1018,6 +1046,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testBlob() throws SQLException, IOException {
+        println("testBlob");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE";
         Connection conn;
@@ -1045,6 +1074,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testEncryption() throws Exception {
+        println("testEncryption");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE";
         Connection conn;
@@ -1064,6 +1094,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testExclusiveLock() throws Exception {
+        println("testExclusiveLock");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE;MVCC=FALSE";
         Connection conn, conn2;
@@ -1087,6 +1118,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testReadOnly() throws Exception {
+        println("testReadOnly");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE";
         Connection conn;
@@ -1105,6 +1137,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testReuseDiskSpace() throws Exception {
+        println("testReuseDiskSpace");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE";
         Connection conn;
@@ -1132,6 +1165,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testDataTypes() throws Exception {
+        println("testDataTypes");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE";
         Connection conn = getConnection(dbName);
@@ -1292,6 +1326,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testLocking() throws Exception {
+        println("testLocking");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE;MVCC=FALSE";
         Connection conn = getConnection(dbName);
@@ -1328,6 +1363,7 @@ public class TestMVTableEngine extends TestBase {
     }
 
     private void testSimple() throws Exception {
+        println("testSimple");
         deleteDb(getTestName());
         String dbName = getTestName() + ";MV_STORE=TRUE";
         Connection conn = getConnection(dbName);
